@@ -24,8 +24,9 @@ venv.bak/
 Thumbs.db
 
 # Project specific
+# Allow quality_model.pkl for deployment (must come before *.pkl)
+!quality_model.pkl
 *.pkl
-!quality_model.pkl  # Keep the trained model for deployment
 *.model
 *.h5
 

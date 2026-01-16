@@ -155,9 +155,10 @@ Fill in the settings:
 - **Build Command:** `pip install -r requirements.txt`
 - **Start Command:** `gunicorn app:app`
 
-**Advanced Settings (Optional):**
+**Advanced Settings (Important):**
 - **Environment:** `Python 3`
-- **Python Version:** `3.11.0` (or latest)
+- **Python Version:** `3.11.9` (IMPORTANT: Use 3.11, NOT 3.13 - pandas compatibility issue)
+- Or use `runtime.txt` file (already created) which automatically sets Python version
 
 ### 4.4 Deploy
 
@@ -195,12 +196,22 @@ https://code-quality-predictor.onrender.com
 
 ## 🔧 Troubleshooting
 
-### Problem: Build Fails
+### Problem: Build Fails - Python 3.13 Compatibility Error
+
+**Error:** `pandas` build fails with Python 3.13
+
+**Solution:**
+- ✅ **FIXED:** `runtime.txt` file is now included (specifies Python 3.11.9)
+- Make sure `runtime.txt` is committed to GitHub
+- If still failing, manually set Python version in Render dashboard to 3.11.9
+- pandas 2.1.4 is NOT compatible with Python 3.13
+
+### Problem: Build Fails (General)
 
 **Solution:**
 - Check build logs in Render dashboard
 - Make sure `requirements.txt` has all dependencies
-- Verify Python version compatibility
+- Verify Python version is 3.11 (not 3.13)
 
 ### Problem: App Crashes on Start
 

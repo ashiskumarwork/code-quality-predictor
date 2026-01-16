@@ -8,6 +8,7 @@ Before you start, make sure:
 - [x] ✅ `.gitignore` - Created (allows quality_model.pkl)
 - [x] ✅ `app.py` - Updated for production
 - [x] ✅ `render.yaml` - Created (optional config)
+- [x] ✅ `runtime.txt` - Created (specifies Python 3.11.9 for compatibility)
 - [ ] ⬜ `quality_model.pkl` - Must exist in project folder
 - [ ] ⬜ Git repository initialized
 - [ ] ⬜ Code pushed to GitHub
@@ -83,7 +84,9 @@ git push
 
 **Build fails?**
 - Check `requirements.txt` has all packages
-- Verify Python version in Render settings
+- **IMPORTANT:** Verify Python version is 3.11.9 (NOT 3.13)
+- `runtime.txt` file should specify `python-3.11.9`
+- pandas 2.1.4 doesn't work with Python 3.13
 
 **App crashes?**
 - Check Render logs
